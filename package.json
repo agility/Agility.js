@@ -1,0 +1,33 @@
+{
+  "name": "agility-js",
+  "version": "1.0.0",
+  "description": "JavaScript Library to facilitate client-side development on Agility CMS projects.",
+  "main": "src/Agility.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgilityInc/Agility.js.git"
+  },
+  "keywords": [
+    "Agility",
+    "AgilityCMS",
+    "helpers",
+    "js"
+  ],
+  "author": "Joel Varty <joel@agilitycms.com>",
+  "contributors": [
+    {
+      "name": "Joel Varty",
+      "email": "joel@agilitycms.com"
+    },
+    {
+      "name": "Pim Brouwers",
+      "email": "pim@agilitycms.com"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AgilityInc/Agility.js/issues"
+  },
+  "dependencies": {
+  }
+}
