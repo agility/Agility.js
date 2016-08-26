@@ -22,6 +22,10 @@
     {
       "name": "Pim Brouwers",
       "email": "pim@agilitycms.com"
+    },
+    {
+      "name": "James Viddler",
+      "email": "james@agilitycms.com"
     }
   ],
   "license": "MIT",
