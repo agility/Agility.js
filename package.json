@@ -1,8 +1,11 @@
 {
-  "name": "agility-js",
-  "version": "1.0.0",
+  "name": "agility",
+  "version": "1.0.1",
   "description": "JavaScript Library to facilitate client-side development on Agility CMS projects.",
   "main": "src/Agility.js",
+  "scripts": {
+    
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/AgilityInc/Agility.js.git"
@@ -20,8 +23,8 @@
       "email": "joel@agilitycms.com"
     },
     {
-      "name": "Pim Brouwers",
-      "email": "pim@agilitycms.com"
+      "name": "Tunc Ekiz",
+      "email": "tunc@agilitycms.com"
     },
     {
       "name": "James Viddler",
@@ -32,6 +35,6 @@
   "bugs": {
     "url": "https://github.com/AgilityInc/Agility.js/issues"
   },
-  "dependencies": {
+  "devDependencies": {
   }
 }

@@ -1,12 +1,12 @@
 /*! Agility
 */
 
-if (typeof (window.Agility) == "undefined") {
-	window.Agility = new Object();	
-}
-(function(Agility) {
+'use strict';
 
-	Agility.RegisterNamespace = function(space) {
+var Agility = new function() {
+	var A = this;
+
+	A.RegisterNamespace = function(space) {
 		/// <summary>
 		/// Register a javascript namespace.
 		/// </summary>
@@ -28,7 +28,7 @@ if (typeof (window.Agility) == "undefined") {
 	};
 	
 	var _sessionLevelCacheKey = null;
-	Agility.SessionLevelCacheKey = function() {
+	A.SessionLevelCacheKey = function() {
 		/// <summary>
 		/// gets a string that is based on the date and time that this page was loaded.  Use this for Client Templating with urls.
 		/// </summary>
@@ -42,7 +42,7 @@ if (typeof (window.Agility) == "undefined") {
     
     var _unique = {};
 	var _uniqueIndex = 0;
-	Agility.UniqueID = function(prePend){
+	A.UniqueID = function(prePend){
 		/// <summary>
 		/// Build a Unique ID (unique to this instance).
 		/// </summary>
@@ -56,14 +56,14 @@ if (typeof (window.Agility) == "undefined") {
 		}				
 	};
 
-    Agility.CloneObject = function (what) {
+    A.CloneObject = function (what) {
 		/// <summary>
 		/// Clones an object to preserve the original value.
 		/// </summary>
 		return JSON.parse(JSON.stringify(what));
 	};
 
-	Agility.ResolveUrl = function(url) {
+	A.ResolveUrl = function(url) {
 		/// <summary>
 		/// Resolve "~/" to the application's base url. *Requires that global var "Edentity_BaseUrl" has been set.
 		/// </summary>
@@ -74,7 +74,7 @@ if (typeof (window.Agility) == "undefined") {
 		return url.replace(/^~\//, baseUrl);
 	};
 	
-	Agility.QueryString = function(name, url) {
+	A.QueryString = function(name, url) {
 		/// <summary>
 		/// Gets a variable from the query string.  
 		/// </summary>
@@ -96,7 +96,8 @@ if (typeof (window.Agility) == "undefined") {
 		var ary1 = qstr.split("&");
 		var retValue = null;
 		
-		jQuery.each(ary1, function(index, q) {
+		for(var i in ary1) {
+			var q = ary1[i];
 			var ary2 = q.split("=");
 			if (ary2.length == 2) {
 				if (unescape(ary2[0]).toLowerCase() == name.toLowerCase()) {
@@ -107,13 +108,13 @@ if (typeof (window.Agility) == "undefined") {
 					return false;
 				}
 			}
-		});
+		}
 		
 		return retValue;
 		
 	};
 	
-	Agility.SetCookie = function(name, value, expires, path, domain, secure ) {
+	A.SetCookie = function(name, value, expires, path, domain, secure ) {
         /// <summary>Sets a cookie based on the name and value provided.</summary>
         /// <param name="name" type="String">The name of the cookie to set the value of.</param>
         /// <param name="value" type="String">The value of the cookie to set.</param>
@@ -131,7 +132,7 @@ if (typeof (window.Agility) == "undefined") {
 		( ( secure ) ? ";secure" : "" );
 	};
 	
-	Agility.GetCookie = function ( cookieName ) {
+	A.GetCookie = function ( cookieName ) {
         /// <summary>Gets the value of the given cookieName from the current cookies collection.</summary>
         /// <param name="cookieName" type="String">The name of the cookie to return.</param>
 
@@ -173,18 +174,20 @@ if (typeof (window.Agility) == "undefined") {
 		}
 	};
 	
-    Agility.DeleteCookie = function(name, path, domain, secure) {
+    A.DeleteCookie = function(name, path, domain, secure) {
         /// <summary>Delete a cookie based on the name provided.</summary>
         /// <param name="name" type="String">The name of the cookie to set the value of.</param>
         /// <param name="path" type="String">(Optional) The path of the cookie.</param>
         /// <param name="domain" type="String">(Optional) The domain of the cookie.</param>
         /// <param name="secure" type="Boolean">(Optional) Whether the cookie is secure or not.</param>
 
-        if (Agility.GetCookie(name)) {
+        if (A.GetCookie(name)) {
             document.cookie = name + "=" + (path ? ";path=" + path : "") +
                 (domain ? ";domain=" + domain : "" ) + (secure ? ";secure" : "") +
                 ";expires=Thu, 01-Jan-1970 00:00:01 GMT";
         }
     };
 
-})(Agility);
+}
+
+module.exports = Agility;
