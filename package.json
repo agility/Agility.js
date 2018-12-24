@@ -1,6 +1,6 @@
 {
   "name": "agility",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "JavaScript Library to facilitate client-side development on Agility CMS projects.",
   "main": "src/Agility.js",
   "scripts": {
