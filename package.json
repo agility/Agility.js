@@ -1,11 +1,9 @@
 {
   "name": "agility",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "JavaScript Library to facilitate client-side development on Agility CMS projects.",
   "main": "src/Agility.js",
-  "scripts": {
-    
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/AgilityInc/Agility.js.git"
@@ -35,6 +33,5 @@
   "bugs": {
     "url": "https://github.com/AgilityInc/Agility.js/issues"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
